@@ -1,6 +1,9 @@
+import { ItemService } from './services/item.service';
+
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { HttpClientModule } from '@angular/common/http';
 
 import { AppComponent } from './app.component';
 import { SandboxComponent } from './components/sandbox/sandbox.component';
@@ -31,9 +34,9 @@ const appRoutes: Routes = [
     CartComponent,
   ],
   // modules we depend on
-  imports: [BrowserModule, RouterModule.forRoot(appRoutes)],
+  imports: [BrowserModule, HttpClientModule, RouterModule.forRoot(appRoutes)],
   // all services
-  providers: [],
+  providers: [ItemService],
   // root component
   bootstrap: [AppComponent],
 })

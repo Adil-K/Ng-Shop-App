@@ -20,9 +20,33 @@ export interface IItemDTO {
 export class ItemService {
   constructor(private httpClient: HttpClient) {}
 
-  getItems(): Observable<Item[]> {
+  getAll(): Observable<Item[]> {
     return this.httpClient
       .get<IItemDTO[]>('/api/products')
       .map(data => data.map(resource => new Item(resource)));
+  }
+
+  get(id): Observable<Item> {
+    return this.httpClient
+      .get<IItemDTO>(`/api/products/${id}`)
+      .map(data => new Item(data));
+  }
+
+  delete(id): Observable<Item> {
+    return this.httpClient
+      .delete<IItemDTO>(`/api/products/${id}`)
+      .map(data => new Item(data));
+  }
+
+  save(item: Item): Observable<Item> {
+    return this.httpClient
+      .post<IItemDTO>(`/api/products/`, item)
+      .map(data => new Item(data));
+  }
+
+  update(item: Item): Observable<Item> {
+    return this.httpClient
+      .put<IItemDTO>(`/api/products/${item.id}`, item)
+      .map(data => new Item(data));
   }
 }
