@@ -1,7 +1,8 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpParams } from '@angular/common/http';
 import { Observable } from 'rxjs/Observable';
-import 'rxjs/operators/map';
+// must have 'add' to work: import 'rxjs/operators/map';
+import 'rxjs/add/operator/map';
 
 import { Item } from '../models/item.model';
 
@@ -21,7 +22,7 @@ export class ItemService {
 
   getItems(): Observable<Item[]> {
     return this.httpClient
-      .get<IItemDTO>('/api/products')
-      .map(data => data.selectedProducts.map(resource => new Item(resource)));
+      .get<IItemDTO[]>('/api/products')
+      .map(data => data.map(resource => new Item(resource)));
   }
 }
