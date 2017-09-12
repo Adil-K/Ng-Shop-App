@@ -1,20 +1,28 @@
 <div class="container">
-    <div class="panel panel-default">
-        <div class="panel-body">
-            This is the {{title}}!
-        </div>
+  <div class="panel panel-default">
+    <div class="panel-body">
+      This is the {{title}}!
     </div>
+  </div>
 
-    <div class="panel panel-default">
-        <div class="panel-heading">Inventory</div>
+  <div class="panel panel-default">
+    <div class="panel-heading">Inventory</div>
 
-        <table *ngFor="let item of items" class="table">
-            <tr>
-                <th>header</th>
-            </tr>
-            <tr>
-                <td>{{item.id}}</td>
-            </tr>
-        </table>
-    </div>
+    <table class="table">
+      <tr>
+        <th>sku</th>
+        <th>title</th>
+        <th>price</th>
+        <th>price</th>
+        <th>stock</th>
+      </tr>
+      <tr *ngFor="let item of items">
+        <td>{{item.sku}}</td>
+        <td>{{item.title}}</td>
+        <td>{{item.basePrice}}</td>
+        <td>{{item.price}}</td>
+        <td>{{item.stocked}}</td>
+      </tr>
+    </table>
+  </div>
 </div>

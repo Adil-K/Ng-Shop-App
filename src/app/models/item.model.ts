@@ -8,6 +8,7 @@ export class Item {
   image: string;
   stocked: boolean;
   basePrice: number;
+  price: number;
 
   constructor(data?: IItemDTO) {
     if (data) {

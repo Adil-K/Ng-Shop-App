@@ -8,13 +8,21 @@
   <div class="panel panel-default">
     <div class="panel-heading">Inventory</div>
 
-    <table class="table">
-      <tr>
-        <th>header</th>
-      </tr>
-      <tr>
-        <td>something</td>
-      </tr>
-    </table>
   </div>
+
+  <div class="row">
+    <div class="col-sm-6 col-md-4" *ngFor="let item of items">
+      <div class="thumbnail">
+        <img src="{{item.image}}">
+        <div class="caption">
+          <h4>{{item.title}}</h4>
+          <p>{{item.desc}}</p>
+          <hr>
+          <p style="display: inline-block;">$ {{item.price}}</p>
+          <button class="btn btn-primary pull-right">add to cart</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
 </div>

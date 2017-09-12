@@ -45,7 +45,8 @@ app.get('/api/products', (req, res) => {
     page * pageSize + pageSize,
   );
 
-  res.json({ total: products.length, page, pageSize, selectedProducts });
+  //res.json({ total: products.length, page, pageSize, selectedProducts });
+  res.json(products);
 });
 
 // get single product by id
