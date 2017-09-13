@@ -15,4 +15,7 @@ export class Item {
       Object.assign(this, data);
     }
   }
+  updateBy(data: any) {
+    Object.assign(this, data);
+  }
 }

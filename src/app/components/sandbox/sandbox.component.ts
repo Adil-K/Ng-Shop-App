@@ -5,6 +5,12 @@ import { Component, Input } from '@angular/core';
   templateUrl: './sandbox.component.html',
 })
 export class SandboxComponent {
-  title = 'Sandbox';
   @Input() type = 'danger';
+
+  title = 'Sandbox';
+  model: any = {};
+  types: any = ['standard', 'advanced'];
+  onSubmit() {
+    console.log('submit', this.model);
+  }
 }

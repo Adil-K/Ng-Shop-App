@@ -1,7 +1,10 @@
 <div class="container">
+
+  <!-- forms -->
+  <h2>Welcome to the {{title}}!</h2>
   <div class="panel panel-default">
     <div class="panel-body">
-      Welcome to the {{title}}!
+      Template driven form
     </div>
   </div>
   <div class="jumbotron">
@@ -10,5 +13,27 @@
     </div>
     <div class="alert alert-warning" role="alert">this is a warning</div>
     <div class="alert alert-danger" role="alert">this is danger</div>
+  </div>
+
+  <!-- alerts -->
+  <div class="panel panel-default">
+    <div class="panel-body">
+      Alerts
+    </div>
+  </div>
+  <div class="jumbotron">
+    <form (ngSubmit)="onSubmit()">
+      <div class="form-group">
+        <label for="name">Name</label>
+        <input type="text" class="form-control" name="name" [(ngModel)]="model.name">
+      </div>
+      <div class="form-group">
+        <label for="power">Type</label>
+        <select class="form-control" name="type" [(ngModel)]="model.type">
+                  <option *ngFor="let type of types" [value]="type">{{type}}</option>
+              </select>
+      </div>
+      <button type="submit" class="btn btn-success">Submit</button>
+    </form>
   </div>
 </div>

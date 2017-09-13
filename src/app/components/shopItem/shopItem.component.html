@@ -1,1 +1,12 @@
-<div></div>
+<div class="container">
+  <form (ngSubmit)="onSubmit(shopItemForm)" [formGroup]="shopItemForm">
+
+    <div class="form-group">
+      <label for="sku">sku</label>
+      <input type="text" class="form-control" formControlName="sku" id="sku">
+    </div>
+
+    <button type="submit" class="btn btn-success">Submit</button>
+  </form>
+
+</div>

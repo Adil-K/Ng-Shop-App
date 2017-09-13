@@ -1,15 +1,17 @@
+import { ItemResolve } from './resolvers/item.resolver';
 import { ItemService } from './services/item.service';
 
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { RouterModule, Routes } from '@angular/router';
 import { HttpClientModule } from '@angular/common/http';
+import { ShopItemModule } from './components/shopItem/shopItem.module';
 
 import { AppComponent } from './app.component';
 import { SandboxComponent } from './components/sandbox/sandbox.component';
 import { ItemTableComponent } from './components/itemTable/itemTable.component';
 import { ItemPanelComponent } from './components/itemPanel/ItemPanel.component';
-import { ShopItemComponent } from './components/shopItem/shopItem.component';
 import { CartComponent } from './components/cart/cart.component';
 
 // instuctions for new conponent:
@@ -19,6 +21,10 @@ import { CartComponent } from './components/cart/cart.component';
 const appRoutes: Routes = [
   { path: 'sandbox', component: SandboxComponent },
   { path: 'item-table', component: ItemTableComponent },
+  {
+    path: 'item-detail',
+    loadChildren: 'shopItem/shopItem.module#ShopItemModule',
+  },
   { path: 'item-panel', component: ItemPanelComponent },
   { path: '', redirectTo: '/item-table', pathMatch: 'full' },
 ];
@@ -30,13 +36,19 @@ const appRoutes: Routes = [
     SandboxComponent,
     ItemTableComponent,
     ItemPanelComponent,
-    ShopItemComponent,
     CartComponent,
   ],
   // modules we depend on
-  imports: [BrowserModule, HttpClientModule, RouterModule.forRoot(appRoutes)],
+  imports: [
+    BrowserModule,
+    HttpClientModule,
+    RouterModule.forRoot(appRoutes),
+    FormsModule,
+    ReactiveFormsModule,
+    ShopItemModule,
+  ],
   // all services
-  providers: [ItemService],
+  providers: [ItemService, ItemResolve],
   // root component
   bootstrap: [AppComponent],
 })
