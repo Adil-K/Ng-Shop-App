@@ -28,6 +28,7 @@ export class ItemService {
   }
 
   get(id): Observable<Item> {
+    console.log('get', id);
     return this.httpClient
       .get<IItemDTO>(`/api/products/${id}`)
       .map(data => new Item(data));
@@ -40,6 +41,7 @@ export class ItemService {
   }
 
   save(item: Item): Observable<Item> {
+    console.log('save', item);
     return this.httpClient
       .post<IItemDTO>(`/api/products/`, item)
       .map(data => new Item(data));

@@ -10,6 +10,7 @@ export class ItemResolve implements Resolve<Item> {
   constructor(private productService: ItemService) {}
   resolve(route: ActivatedRouteSnapshot): Observable<Item> {
     const id = route.params['id'];
+    console.log('resolver', id);
     if (id) {
       return this.productService.get(id);
     }

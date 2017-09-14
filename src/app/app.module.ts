@@ -1,3 +1,4 @@
+import { ShopItemComponent } from './components/shopItem/shopItem.component';
 import { ItemResolve } from './resolvers/item.resolver';
 import { ItemService } from './services/item.service';
 
@@ -21,9 +22,21 @@ import { CartComponent } from './components/cart/cart.component';
 const appRoutes: Routes = [
   { path: 'sandbox', component: SandboxComponent },
   { path: 'item-table', component: ItemTableComponent },
+  // {
+  //   path: 'item-detail',
+  //   component: ShopItemComponent,
+  //   //     loadChildren: '../shopItem/shopItem.module#ShopItemModule',
+  // },
+  {
+    path: ':id',
+    component: ShopItemComponent,
+    resolve: {
+      product: ItemResolve,
+    },
+  },
   {
     path: 'item-detail',
-    loadChildren: 'shopItem/shopItem.module#ShopItemModule',
+    component: ShopItemComponent,
   },
   { path: 'item-panel', component: ItemPanelComponent },
   { path: '', redirectTo: '/item-table', pathMatch: 'full' },

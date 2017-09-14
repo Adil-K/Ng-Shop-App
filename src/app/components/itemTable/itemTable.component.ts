@@ -13,6 +13,7 @@ export class ItemTableComponent implements OnInit {
   constructor(private itemService: ItemService) {}
 
   ngOnInit() {
+    console.log('item-table');
     this.itemService.getAll().subscribe(items => {
       this.items = items;
     });

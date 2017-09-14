@@ -33,6 +33,7 @@ export class ShopItemComponent implements OnInit {
   }
 
   onSubmit(form: FormGroup) {
+    console.log('onSubmit');
     form['submitted'] = true;
     if (!form.valid) {
       return;

@@ -5,7 +5,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 @NgModule({
-  imports: [ReactiveFormsModule, CommonModule, ShopItemRoutingModule],
+  imports: [ReactiveFormsModule, CommonModule],
   declarations: [ShopItemComponent],
   providers: [],
   exports: [ShopItemComponent],
