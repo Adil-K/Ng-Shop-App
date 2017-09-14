@@ -13,34 +13,31 @@ export class ShopItemComponent implements OnInit {
   item = new Item();
   shopItemForm: FormGroup;
 
-  constructor(
-    private itemService: ItemService,
-    private location: Location,
-    private activeRoute: ActivatedRoute,
-  ) {}
+  constructor(private itemService: ItemService) {} // private location: Location,
+  // private activeRoute: ActivatedRoute,
 
   ngOnInit() {
-    this.item = this.activeRoute.snapshot.data['item'] as Item;
+    // this.item = this.activeRoute.snapshot.data['item'] as Item;
 
     this.shopItemForm = new FormGroup({
       sku: new FormControl(''),
-      title: new FormControl(''),
-      price: new FormControl(''),
-      basePrice: new FormControl(''),
-      desc: new FormControl(''),
-      stocked: new FormControl(''),
+      // title: new FormControl(''),
+      // price: new FormControl(''),
+      // basePrice: new FormControl(''),
+      // desc: new FormControl(''),
+      // stocked: new FormControl(''),
     });
   }
 
   onSubmit(form: FormGroup) {
-    console.log('onSubmit');
-    form['submitted'] = true;
-    if (!form.valid) {
-      return;
-    }
-    this.item.updateBy(this.shopItemForm.value);
-    this.itemService.save(this.item).subscribe(() => {
-      this.location.back();
-    });
+    // console.log('onSubmit');
+    // form['submitted'] = true;
+    // if (!form.valid) {
+    //   return;
+    // }
+    // this.item.updateBy(this.shopItemForm.value);
+    // this.itemService.save(this.item).subscribe(() => {
+    //   this.location.back();
+    // });
   }
 }
