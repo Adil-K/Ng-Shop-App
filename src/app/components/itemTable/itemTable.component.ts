@@ -13,9 +13,15 @@ export class ItemTableComponent implements OnInit {
   constructor(private itemService: ItemService) {}
 
   ngOnInit() {
-    console.log('item-table');
     this.itemService.getAll().subscribe(items => {
       this.items = items;
+    });
+  }
+
+  onDelete(item) {
+    console.log('delete ' + item);
+    this.itemService.delete(item.id).subscribe(deletedItem => {
+      this.items = this.items.filter(itm => itm.id !== deletedItem.id);
     });
   }
 }

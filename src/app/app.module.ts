@@ -20,15 +20,11 @@ import { ShopItemComponent } from './components/shopItem/shopItem.component';
 const appRoutes: Routes = [
   { path: 'sandbox', component: SandboxComponent },
   { path: 'item-table', component: ItemTableComponent },
-  // {
-  //   path: 'item-detail',
-  //   component: ShopItemComponent,
-  //   //     loadChildren: '../shopItem/shopItem.module#ShopItemModule',
-  // },
   {
     path: 'shop-item/:id',
     component: ShopItemComponent,
   },
+  { path: 'shop-item', component: ShopItemComponent },
   { path: 'item-panel', component: ItemPanelComponent },
   { path: '', redirectTo: '/item-table', pathMatch: 'full' },
 ];

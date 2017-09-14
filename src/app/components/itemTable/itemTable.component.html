@@ -6,7 +6,10 @@
   </div>
 
   <div class="panel panel-default">
-    <div class="panel-heading">Inventory</div>
+    <div class="panel-heading">Inventory
+
+      <a class="pull-right" routerLink="/shop-item">new item</a>
+    </div>
 
     <table class="table">
       <tr>
@@ -28,7 +31,7 @@
           <a [routerLink]="['/shop-item', item.id]">edit</a>
         </td>
         <td>
-          <p>delete</p>
+          <a (click)="onDelete(item)" style="color:red;">delete</a>
         </td>
       </tr>
     </table>

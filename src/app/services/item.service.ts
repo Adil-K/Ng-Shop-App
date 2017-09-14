@@ -40,7 +40,7 @@ export class ItemService {
       .map(data => new Item(data));
   }
 
-  save(item: Item): Observable<Item> {
+  create(item: Item): Observable<Item> {
     console.log('save', item);
     return this.httpClient
       .post<IItemDTO>(`/api/products/`, item)
@@ -51,5 +51,12 @@ export class ItemService {
     return this.httpClient
       .put<IItemDTO>(`/api/products/${item.id}`, item)
       .map(data => new Item(data));
+  }
+
+  save(item: Item) {
+    if (item.isNew()) {
+      return this.create(item);
+    }
+    return this.update(item);
   }
 }

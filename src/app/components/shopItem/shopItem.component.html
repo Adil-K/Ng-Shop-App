@@ -1,9 +1,35 @@
 <div class="container">
   <form (ngSubmit)="onSubmit(shopItemForm)" [formGroup]="shopItemForm">
 
+
     <div class="form-group">
       <label for="sku">sku</label>
       <input type="text" class="form-control" formControlName="sku" id="sku">
+    </div>
+
+    <div class="form-group">
+      <label for="title">title</label>
+      <input type="text" class="form-control" formControlName="title" id="title">
+    </div>
+
+    <div class="form-group">
+      <label for="price">price</label>
+      <input type="text" class="form-control" formControlName="price" id="price">
+    </div>
+
+    <div class="form-group">
+      <label for="basePrice">basePrice</label>
+      <input type="text" class="form-control" formControlName="basePrice" id="basePrice">
+    </div>
+
+    <div class="form-group">
+      <label for="desc">desc</label>
+      <input type="text" class="form-control" formControlName="desc" id="desc">
+    </div>
+
+    <div class="form-group">
+      <label for="stocked">stocked</label>
+      <input type="text" class="form-control" formControlName="stocked" id="stocked">
     </div>
 
     <button type="submit" class="btn btn-success">Submit</button>
