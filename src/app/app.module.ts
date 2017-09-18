@@ -1,3 +1,4 @@
+import { ItemResolve } from './resolvers/item.resolver';
 import { ItemService } from './services/item.service';
 
 import { BrowserModule } from '@angular/platform-browser';
@@ -23,6 +24,9 @@ const appRoutes: Routes = [
   {
     path: 'shop-item/:id',
     component: ShopItemComponent,
+    resolve: {
+      item: ItemResolve,
+    },
   },
   { path: 'shop-item', component: ShopItemComponent },
   { path: 'item-panel', component: ItemPanelComponent },
@@ -48,7 +52,7 @@ const appRoutes: Routes = [
     ReactiveFormsModule,
   ],
   // all services
-  providers: [ItemService],
+  providers: [ItemService, ItemResolve],
   // root component
   bootstrap: [AppComponent],
 })

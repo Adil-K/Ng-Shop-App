@@ -28,7 +28,6 @@ export class ItemService {
   }
 
   get(id): Observable<Item> {
-    console.log('get', id);
     return this.httpClient
       .get<IItemDTO>(`/api/products/${id}`)
       .map(data => new Item(data));

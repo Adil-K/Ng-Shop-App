@@ -5,7 +5,7 @@ import { Component, OnInit } from '@angular/core';
   selector: 'item-panel',
   templateUrl: './itemPanel.component.html',
 })
-export class ItemPanelComponent {
+export class ItemPanelComponent implements OnInit {
   title = 'Panel view for the shop';
 
   items: IItemDTO[] = [];

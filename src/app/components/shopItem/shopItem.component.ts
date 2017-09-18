@@ -22,8 +22,6 @@ export class ShopItemComponent implements OnInit {
   ngOnInit() {
     this.item = (this.activeRoute.snapshot.data['item'] as Item) || new Item();
 
-    console.log(this.item);
-
     this.shopItemForm = new FormGroup({
       sku: new FormControl(''),
       title: new FormControl('', [Validators.required]),
@@ -39,7 +37,6 @@ export class ShopItemComponent implements OnInit {
   }
 
   onSubmit(form: FormGroup) {
-    console.log('onSubmit');
     form['submitted'] = true;
     if (!form.valid) {
       return;
