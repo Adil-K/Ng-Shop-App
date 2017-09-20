@@ -11,7 +11,7 @@ import { AppComponent } from './app.component';
 import { SandboxComponent } from './components/sandbox/sandbox.component';
 import { ItemTableComponent } from './components/itemTable/itemTable.component';
 import { ItemPanelComponent } from './components/itemPanel/ItemPanel.component';
-import { CartComponent } from './components/cart/cart.component';
+import { BasketComponent } from './components/basket/basket.component';
 import { ShopItemComponent } from './components/shopItem/shopItem.component';
 
 // instuctions for new conponent:
@@ -40,8 +40,8 @@ const appRoutes: Routes = [
     SandboxComponent,
     ItemTableComponent,
     ItemPanelComponent,
-    CartComponent,
     ShopItemComponent,
+    BasketComponent,
   ],
   // modules we depend on
   imports: [
