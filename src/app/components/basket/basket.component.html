@@ -1,13 +1,23 @@
-<table class="table">
-  <tr>
-    <th>title</th>
-    <th>price</th>
-  </tr>
-  <tr>
-    <td></td>
-    <td></td>
-  </tr>
-  <tr>
-    <th>total</th>
-  </tr>
-</table>
+<div class="panel panel-default">
+  <div class="panel-heading">Basket
+  </div>
+
+  <div class="panel-body">
+    <table class="table">
+      <tr>
+        <th>items:</th>
+        <th></th>
+      </tr>
+      <tr *ngFor="let item of basket">
+        <td>{{item.title}}</td>
+        <td>{{item.price}}</td>
+        <td>
+          <a (click)="onDelete(item)" style="color:red;">delete</a>
+        </td>
+      </tr>
+    </table>
+  </div>
+
+  <div class="panel-heading">
+  </div>
+</div>

@@ -33,7 +33,7 @@ app.get('/api/products', (req, res) => {
   const sortExpression = req.query.sort;
 
   // sort
-  console.log(sortExpression);
+  // console.log(sortExpression);
   let selectedProducts = products;
   if (sortExpression) {
     selectedProducts = sortOn(selectedProducts, sortExpression);

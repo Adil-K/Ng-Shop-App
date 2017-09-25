@@ -10,7 +10,5 @@ export class SandboxComponent {
   title = 'Sandbox';
   model: any = {};
   types: any = ['standard', 'advanced'];
-  onSubmit() {
-    console.log('submit', this.model);
-  }
+  onSubmit() {}
 }

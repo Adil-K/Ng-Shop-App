@@ -1,39 +1,37 @@
-<div class="container">
-  <div class="panel panel-default">
-    <div class="panel-body">
-      This is the {{title}}!
-    </div>
+<div class="panel panel-default">
+  <div class="panel-body">
+    This is the {{title}}!
+  </div>
+</div>
+
+<div class="panel panel-default">
+  <div class="panel-heading">Inventory
+
+    <a class="pull-right" routerLink="/shop-item">new item</a>
   </div>
 
-  <div class="panel panel-default">
-    <div class="panel-heading">Inventory
-
-      <a class="pull-right" routerLink="/shop-item">new item</a>
-    </div>
-
-    <table class="table">
-      <tr>
-        <th>sku</th>
-        <th>title</th>
-        <th>price</th>
-        <th>price</th>
-        <th>stock</th>
-        <th></th>
-        <th></th>
-      </tr>
-      <tr *ngFor="let item of items">
-        <td>{{item.sku}}</td>
-        <td>{{item.title}}</td>
-        <td>{{item.basePrice}}</td>
-        <td>{{item.price}}</td>
-        <td>{{item.stocked}}</td>
-        <td>
-          <a [routerLink]="['/shop-item', item.id]">edit</a>
-        </td>
-        <td>
-          <a (click)="onDelete(item)" style="color:red;">delete</a>
-        </td>
-      </tr>
-    </table>
-  </div>
+  <table class="table">
+    <tr>
+      <th>sku</th>
+      <th>title</th>
+      <th>price</th>
+      <th>price</th>
+      <th>stock</th>
+      <th></th>
+      <th></th>
+    </tr>
+    <tr *ngFor="let item of items">
+      <td>{{item.sku}}</td>
+      <td>{{item.title}}</td>
+      <td>{{item.basePrice}}</td>
+      <td>{{item.price}}</td>
+      <td>{{item.stocked}}</td>
+      <td>
+        <a [routerLink]="['/shop-item', item.id]">edit</a>
+      </td>
+      <td>
+        <a (click)="onDelete(item)" style="color:red;">delete</a>
+      </td>
+    </tr>
+  </table>
 </div>

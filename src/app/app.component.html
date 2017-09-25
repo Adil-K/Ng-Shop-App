@@ -9,8 +9,16 @@
     </ul>
   </nav>
 
-  <div class="container">
+
+  <div class="col-md-10">
     <!-- Routed views go here -->
-    <router-outlet></router-outlet>
+    <div class="col-md-9">
+      <router-outlet></router-outlet>
+    </div>
+
+    <div class="col-md-3">
+      <basket></basket>
+    </div>
   </div>
+
 </body>

@@ -40,7 +40,6 @@ export class ItemService {
   }
 
   create(item: Item): Observable<Item> {
-    console.log('save', item);
     return this.httpClient
       .post<IItemDTO>(`/api/products/`, item)
       .map(data => new Item(data));

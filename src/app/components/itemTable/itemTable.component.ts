@@ -19,7 +19,6 @@ export class ItemTableComponent implements OnInit {
   }
 
   onDelete(item) {
-    console.log('delete ' + item);
     this.itemService.delete(item.id).subscribe(deletedItem => {
       this.items = this.items.filter(itm => itm.id !== deletedItem.id);
     });
