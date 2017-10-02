@@ -1,5 +1,7 @@
 import { ItemResolve } from './resolvers/item.resolver';
 import { ItemService } from './services/item.service';
+import { BasketService } from './services/basket.service';
+import { EventAggregator } from './event.aggregator';
 
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
@@ -52,7 +54,7 @@ const appRoutes: Routes = [
     ReactiveFormsModule,
   ],
   // all services
-  providers: [ItemService, ItemResolve],
+  providers: [ItemService, ItemResolve, BasketService, EventAggregator],
   // root component
   bootstrap: [AppComponent],
 })
